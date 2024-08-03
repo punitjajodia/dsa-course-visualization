@@ -5,7 +5,6 @@ const App = () => {
   const chapters = [
     {
       id: "chapter-1",
-      name: "Introduction",
       lessons: [
         "Introduction to DSA",
         "Why Learn DSA?",
@@ -15,7 +14,6 @@ const App = () => {
     },
     {
       id: "chapter-2",
-      name: "Sorting Algorithms",
       lessons: [
         "Bubble Sort",
         "Selection Sort",
@@ -25,7 +23,152 @@ const App = () => {
         "Counting Sort",
       ],
     },
-    // Add remaining chapters here
+    {
+      id: "chapter-3",
+      lessons: ["Linear Search", "Binary Search"],
+    },
+    {
+      id: "chapter-4",
+      lessons: [
+        "Linked List",
+        "Linked List Operations",
+        "Examples: Linked List",
+      ],
+    },
+    {
+      id: "chapter-5",
+      lessons: [
+        "Introduction to Circular Linked List",
+        "Circular Linked List Operations",
+        "Examples: Circular Linked List",
+      ],
+    },
+    {
+      id: "chapter-6",
+      lessons: [
+        "Introduction to Doubly Linked List",
+        "Doubly Linked List Operations",
+        "Examples: Doubly Linked List",
+      ],
+    },
+    {
+      id: "chapter-7",
+      lessons: ["Stack", "Queue", "Double Ended Queue (Deque)"],
+    },
+    {
+      id: "chapter-8",
+      lessons: [
+        "Introduction to Hashing",
+        "Hashing Techniques",
+        "Hash Collision",
+        "Hash Collision Resolution",
+        "Hash Functions",
+        "Additional Topics",
+      ],
+    },
+    {
+      id: "chapter-9",
+      lessons: [
+        "Introduction",
+        "Brute Force Method",
+        "Rabin-Karp String Matching Algorithm",
+        "Knuth-Morris-Pratt (KMP) Algorithm",
+      ],
+    },
+    {
+      id: "chapter-10",
+      lessons: [
+        "Nonlinear Data Structure",
+        "Tree Data Structure",
+        "Implementation of Trees",
+        "Tree Traversal",
+      ],
+    },
+    {
+      id: "chapter-11",
+      lessons: [
+        "Introduction to Binary Trees",
+        "Properties of Binary Trees",
+        "Implementation of Binary Trees",
+        "Traversal of Binary Tree",
+        "Types of Binary Trees",
+        "Example: Huffman Coding",
+        "Example: Binary Search Tree",
+      ],
+    },
+    {
+      id: "chapter-12",
+      lessons: [
+        "Array Representation of Binary Tree",
+        "Introduction to Heaps",
+        "Heapify & Heap Operations",
+        "Heap Sort",
+        "Heap as a Priority Queue",
+      ],
+    },
+    {
+      id: "chapter-13",
+      lessons: [
+        "Introduction to Greedy Algorithms",
+        "Classroom Scheduling Problem",
+        "Coin Change Problem",
+        "The Fractional Knapsack Problem",
+        "0-1 Knapsack Problem",
+      ],
+    },
+    {
+      id: "chapter-14",
+      lessons: [
+        "Graph Data Structure",
+        "Graph Terminologies",
+        "Adjacency Matrix",
+        "Adjacency List",
+        "Graph Traversal With DFS Algorithm",
+        "BFS Algorithm",
+      ],
+    },
+    {
+      id: "chapter-15",
+      lessons: [
+        "Graph Connectivity",
+        "Touring a Graph",
+        "Graph Comparisons and Special Properties",
+        "Types of Graph",
+      ],
+    },
+    {
+      id: "chapter-16",
+      lessons: [
+        "Graph Based Algorithms",
+        "Topological Sorting",
+        "Dijkstra's Algorithm",
+        "Ford–Fulkerson Algorithm",
+        "Spanning Trees",
+        "Kruskal's Algorithm",
+        "Prim's Algorithm",
+      ],
+    },
+    {
+      id: "chapter-17",
+      lessons: [
+        "Additional Sorting Techniques",
+        "Bucket Sort",
+        "Radix Sort",
+        "Shell Sort",
+      ],
+    },
+    {
+      id: "chapter-18",
+      lessons: [
+        "Introduction to Balanced Trees",
+        "AVL Trees",
+        "Red-Black Trees",
+      ],
+    },
+    {
+      id: "chapter-19",
+      lessons: ["What's Next?"],
+    },
   ];
 
   const [currentChapter, setCurrentChapter] = useState(0);
@@ -141,29 +284,35 @@ const App = () => {
                   >
                     {lesson}
                   </div>
-                  {lessonIndex < chapter.lessons.length - 1 && (
-                    <div
-                      className={`traversal-icon ${
-                        highlightedTraversal === lessonIndex + 1
-                          ? "highlight-forward"
-                          : ""
-                      }`}
-                    >
-                      ➡️
-                    </div>
-                  )}
-                  {lessonIndex > 0 && (
-                    <div
-                      className={`traversal-icon ${
-                        highlightedTraversal === lessonIndex &&
-                        traversalDirection === "backward"
-                          ? "highlight-backward"
-                          : ""
-                      }`}
-                    >
-                      ⬅️
-                    </div>
-                  )}
+                  {lessonIndex < chapter.lessons.length - 1 &&
+                    chapterIndex === currentChapter && (
+                      <div
+                        className={`traversal-icon ${
+                          highlightedTraversal === lessonIndex + 1 &&
+                          traversalDirection === "forward" &&
+                          chapterIndex === currentChapter
+                            ? "highlight-forward"
+                            : ""
+                        }`}
+                      >
+                        ➡️
+                      </div>
+                    )}
+                  {lessonIndex < chapter.lessons.length - 1 &&
+                    lessonIndex >= 0 &&
+                    chapterIndex === currentChapter && (
+                      <div
+                        className={`traversal-icon ${
+                          highlightedTraversal === lessonIndex &&
+                          traversalDirection === "backward" &&
+                          chapterIndex === currentChapter
+                            ? "highlight-backward"
+                            : ""
+                        }`}
+                      >
+                        ⬅️
+                      </div>
+                    )}
                 </React.Fragment>
               ))}
             </div>
