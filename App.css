@@ -1,0 +1,95 @@
+.course-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+.navigation-buttons {
+  margin-bottom: 20px;
+}
+
+.nav-button {
+  font-size: 24px;
+  margin: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.course-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.chapter-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.chapter-name {
+  font-weight: bold;
+  margin-right: 20px;
+  min-width: 150px; /* Space for chapter name */
+}
+
+.lessons {
+  display: flex;
+  align-items: center;
+}
+
+.lesson {
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.lesson.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.traversal-icon {
+  font-size: 20px;
+  margin: 0 5px;
+  transition: transform 0.3s;
+  display: inline-block;
+}
+
+.highlight-forward {
+  animation: grow-shrink 0.5s forwards;
+}
+
+.highlight-backward {
+  animation: grow-shrink-backward 0.5s forwards;
+}
+
+@keyframes grow-shrink {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes grow-shrink-backward {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
